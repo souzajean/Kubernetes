@@ -13,13 +13,11 @@ multipass exec k8s -- /snap/bin/microk8s.kubectl get pods<br>
 multipass exec k8s -- /snap/bin/microk8s.kubectl config view --raw<br>
 multipass list #anotar ip adress
 
-
 # Maquina local (Instalar também o Microk8s)
 su - $USER<br>
 microk8s status --wait-ready #Verificar status do serviço<br>
 kubectl get pods<br>
-kubectl get nodes<br>
-
+kubectl get nodes
 
 # Instalando nossa 2 máquina com Microk8s
 multipass launch -n k8s2 -c 2 -m 4G -d 20GB<br>
@@ -33,19 +31,19 @@ sudo iptables -P FORWARD ACCEPT<br>
 multipass list
 
 # Adicionando o node
-multipass shell k8s
-microk8s add-node
+multipass shell k8s<br>
+microk8s add-node<br>
 Copiar join
 
 # Entrar no K8s2
-multipass shell k8s2
+multipass shell k8s2<br>
 colar join
 
 # Maquina local
 kubctl get nodes
 
 # Instalação Kubeadm
-cat << EOF | sudo tee /etc/modules-load.d/containerd.conf
->overlay
->br_netfilter
+cat << EOF | sudo tee /etc/modules-load.d/containerd.conf<br>
+>overlay<br>
+>br_netfilter<br>
 >EOF
