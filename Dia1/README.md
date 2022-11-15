@@ -3,22 +3,22 @@
 
 # Instalando Microk8s
 
-multipass launch -n k8s -c 2 -m 4G -d 20GB
-multipass exec k8s -- sudo snap install microk8s --classic --channel=1.25/stable
-multipass exec k8s -- sudo usermod -a -G microk8s ubuntu
-multipass exec k8s -- sudo chown -f -R ubuntu ~/.kube
-multipass restart k8s
-multipass exec k8s -- /snap/bin/microk8s.kubectl create deployment nginx --image=nginx
-multipass exec k8s -- /snap/bin/microk8s.kubectl get pods
-multipass exec k8s -- /snap/bin/microk8s.kubectl config view --raw
+multipass launch -n k8s -c 2 -m 4G -d 20GB<br>
+multipass exec k8s -- sudo snap install microk8s --classic --channel=1.25/stable<br>
+multipass exec k8s -- sudo usermod -a -G microk8s ubuntu<br>
+multipass exec k8s -- sudo chown -f -R ubuntu ~/.kube<br>
+multipass restart k8s<br>
+multipass exec k8s -- /snap/bin/microk8s.kubectl create deployment nginx --image=nginx<br>
+multipass exec k8s -- /snap/bin/microk8s.kubectl get pods<br>
+multipass exec k8s -- /snap/bin/microk8s.kubectl config view --raw<br>
 multipass list #anotar ip adress
 
 
 # Maquina local (Instalar também o Microk8s)
-su - $USER
-microk8s status --wait-ready #Verificar status do serviço
-kubectl get pods
-kubectl get nodes
+su - $USER<br>
+microk8s status --wait-ready #Verificar status do serviço<br>
+kubectl get pods<br>
+kubectl get nodes<br>
 
 
 # Instalando nossa 2 máquina com Microk8s
