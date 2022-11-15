@@ -22,14 +22,14 @@ kubectl get nodes<br>
 
 
 # Instalando nossa 2 máquina com Microk8s
-multipass launch -n k8s2 -c 2 -m 4G -d 20GB
-multipass exec k8s2 -- sudo snap install microk8s --classic --channel=1.25/stable
-multipass exec k8s2 -- sudo usermod -a -G microk8s ubuntu
-multipass exec k8s2 -- sudo chown -f -R ubuntu ~/.kube
+multipass launch -n k8s2 -c 2 -m 4G -d 20GB<br>
+multipass exec k8s2 -- sudo snap install microk8s --classic --channel=1.25/stable<br>
+multipass exec k8s2 -- sudo usermod -a -G microk8s ubuntu<br>
+multipass exec k8s2 -- sudo chown -f -R ubuntu ~/.kube<br>
 multipass restart k8s2
 
 # Maquina local
-sudo iptables -P FORWARD ACCEPT
+sudo iptables -P FORWARD ACCEPT<br>
 multipass list
 
 # Adicionando o node
