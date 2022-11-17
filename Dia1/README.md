@@ -81,3 +81,27 @@ sudo sysctl --system
 
 # Instalação Containerd
 sudo apt update && sudo apt install -y containerd
+
+# Configuração padrão do Containerd
+sudo mkdir -p /etc/containerd <br>
+containerd config default | sudo tee /etc/containerd/config.toml
+
+# Reiniciar o container
+sudo systemctl restart containerd
+
+# Atualizo os pacotes necessários pra instalação
+sudo apt-get update && \ <br>
+sudo apt-get install -y apt-transport-https ca-certificates curl
+
+# Download da chave pública do Google Cloud
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+# Adiciono o repositório apt do Kubernetes
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/
+
+# Atualização do repositório apt e instalação das ferramentas
+sudo apt-get update && \ <br>
+sudo apt-get install -y kubelet kubeadm kubectl
+
+# Agora eu garanto que eles não sejam atualizados automaticamente.
+sudo apt-mark hold kubelet kubeadm kubectl
