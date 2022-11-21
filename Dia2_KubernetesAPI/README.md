@@ -68,4 +68,5 @@ spec:
     - name: nginx-container
     image: nginx    
 
-# kubectl create deploy mynginx --image=nginx --port=80 replicas=3 --dry-run=client -o yaml
+# Saida YAML
+kubectl create deploy mynginx --image=nginx --port=80 replicas=3 --dry-run=client -o yaml
