@@ -70,3 +70,13 @@ spec:
 
 # Saida YAML
 kubectl create deploy mynginx --image=nginx --port=80 replicas=3 --dry-run=client -o yaml
+
+# Imperativo
+kubectl create deployment mynginx1 --image=nginx
+
+# Declarativo
+kubectl create -f deploy-example.yaml
+
+# Limpar
+kubectl delete deployment mynginx1
+kubectl delete deploy mynginx2
