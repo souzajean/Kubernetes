@@ -45,3 +45,26 @@ kubectl config rename-context [old-name] [new-name]
 Delete context:
 
 kubectl config delete-context [contextName]
+
+
+# The-declarative-way-vs-the-imperative-way
+
+## Comandos
+kubectl run mynginx --image=nginx -- port=80 <br>
+kubectl create deploy mynginx --image=nginx --port=80 replicas=3 <br>
+kubectl create service noport myservice --targetPort=8080 <br>
+kubectl delete pod nginx
+
+## YAML
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers:
+    - name: nginx-container
+    image: nginx    
+
