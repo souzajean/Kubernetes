@@ -16,7 +16,7 @@ kubectl config use-context [contextName]
 # Using kubectx
 ## What’s great about Kubernetes is the incredible amount of tools created by the community and available for free. Kubectx is a simple tool that provides an easy way to list and change context.
 
-## Como podemos instalar no Windows e MacOS:
+## Como podemos instalar no Windows e MacOS
 
 ### Windows (if you have Chocolatey installed):
 
