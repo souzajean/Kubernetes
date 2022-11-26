@@ -30,7 +30,7 @@ brew install kubectx
 
 sudo apt install kubectx
 
-## To list the contexts, simply type:
+## To list the contexts, simply type
 
 kubectx
 
