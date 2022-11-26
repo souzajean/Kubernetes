@@ -18,7 +18,7 @@ kubectl config use-context [contextName]
 
 ## Como podemos instalar no Windows, MacOS e Linux.
 
-### Windows (Como instalar o Chocolatey)
+### Windows (Como instalar o Chocolatey):
 
 choco install kubectx-ps
 
