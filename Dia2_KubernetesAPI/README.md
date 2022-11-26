@@ -21,12 +21,15 @@ kubectl config use-context [contextName]
 ### Windows (if you have Chocolatey installed):
 
 choco install kubectx-ps
+
 ### macOS (if you have Brew installed):
 
 brew install kubectx
-### Ubuntu:
+
+### Ubuntu
 
 sudo apt install kubectx
+
 ## To list the contexts, simply type:
 
 kubectx
